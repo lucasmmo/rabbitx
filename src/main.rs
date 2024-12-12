@@ -128,7 +128,7 @@ fn main() {
                     stack.push(path);
                 } else {
                     if let Ok(content) = fs::read_to_string(&path) {
-                        for (k, v) in regex_map.clone() {
+                        for (k, v) in &regex_map {
                             let content = content.clone();
                             let path = entry.path().clone();
                             let re = Regex::new(&v).unwrap();
